@@ -151,6 +151,13 @@ li > button:hover {
 .cbtn {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cbtn h2 {
+    font-size: medium;
 }
 
 

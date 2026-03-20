@@ -1,11 +1,20 @@
 let ulKalataList = document.getElementById("kalataList");
+let totalDisplay = document.getElementById("totalPriceDisplay");
 
 function getAllCart() {
   fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
     .then((pasuxi) => pasuxi.json())
-    .then((data) =>
-      data.forEach((item) => (ulKalataList.innerHTML += list(item))),
-    );
+    .then((data) => {
+      let totalSum = 0; 
+      ulKalataList.innerHTML = ""; 
+
+      data.forEach((item) => {
+        ulKalataList.innerHTML += list(item);
+        totalSum += item.quantity * item.price; 
+      });
+
+      totalDisplay.innerText = `Total: ${totalSum} ₾`;
+    });
 }
 
 getAllCart();
