@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo"><i class="fa-solid fa-utensils"></i></div>
+    <div class="nav-links">
+        <a href="index.html">Main</a>
+        <a href="cart.html" class="cart-btn">Cart 🛒</a>
+    </div>
+</nav>
+
+<section>
+    <div class="profile-container">
+        <div id="userData">
+            <p>Loading...</p>
+        </div>
+        
+        <button class="logout-btn" onclick="logOut()">LogOut</button>
+        <a href="index.html" class="back-home">← Go To Main Page</a>
+    </div>
+</section>
+    <ul id="kalataList"></ul>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

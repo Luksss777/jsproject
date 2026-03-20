@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+
+    <nav class="navbar">
+    <div class="logo"><i class="fa-solid fa-utensils"></i></div>
+    <div class="nav-links">
+        <a href="cart.html" class="cart-btn">Cart🛒</a>
+        <div id="authButtons">
+            <button class="login-btn" onclick="toggleModal('loginModal')">Login</button>
+            <button class="reg-btn" onclick="toggleModal('regModal')">Registration</button>
+        </div>
+        <button id="profileBtn" style="display:none;" onclick="gotoProfile()">Profile</button>
+    </div>
+</nav>
+
+<div id="regModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="toggleModal('regModal')">&times;</span>
+        <h2>Registration</h2>
+        <form onsubmit="register(event)">
+            <div class="mainArea">
+    <div class="left">
+        <input type="text" placeholder="First Name" name="firstName" required>
+        <input type="text" placeholder="Last Name" name="lastName" required>
+        <input type="email" placeholder="Email" name="email" required>
+        <input type="password" placeholder="Password" name="password" minlength="8" required>
+        <input type="text" placeholder="Address" name="address" required>
+    </div>
+    <div class="right">
+        <input type="number" placeholder="Age" name="age" required>
+        <input type="text" placeholder="Phone Number" name="phone" value="+995" required>
+        <input type="number" placeholder="Zipcode" name="zipcode" required>
+        <input type="text" placeholder="Profile Picture (URL)" name="avatar">
+        <select name="gender" required>
+            <option value="MALE">Male</option>
+            <option value="FEMALE">Female</option>
+            <option value="OTHER">Other</option>
+        </select>
+    </div>
+</div>
+            <button class="action-btn">Registration</button>
+        </form>
+    </div>
+</div>
+
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="toggleModal('loginModal')">&times;</span>
+        <h2>Login</h2>
+<form onsubmit="login(event)">
+    <input type="email" placeholder="Email" name="email" required>
+    <input type="password" placeholder="Password" name="password" required>
+    <button class="action-btn" type="submit">Login</button>
+</form>
+    </div>
+</div>
+
+    <ul>
+      <li onclick="showAll()">All</li>
+    </ul>
+
+    <section></section>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
