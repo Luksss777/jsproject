@@ -51,6 +51,51 @@ body {
 
 .nav-links a:hover { color: var(--primary); }
 
+.mainfilt {
+    display: flex;
+    justify-content: center;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter .filtr {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    color: var(--light);
+}
+
+#spiceSlider {
+    -webkit-appearance: none; 
+    width: 100%;
+    height: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+}
+
+#spiceSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 section {
     display: flex;
     gap: 20px;

@@ -87,3 +87,7 @@ function deleteItem(id) {
     .then((pasuxi) => pasuxi.text())
     .then(() => getAllCart());
 }
+
+function gotoProfile() {
+    window.location.href = "profile.html";
+}

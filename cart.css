@@ -67,6 +67,7 @@ i {
     border-radius: 12px;
     font-weight: 600;
     border: none;
+    cursor: pointer;
 }
 
 
@@ -138,6 +139,7 @@ li > button:hover {
     width: 200px;
     height: 50px;
     border: 2px solid var(--primary);
+    border-radius: 20px;
     background-color: var(--light);
     font-size: large;
 

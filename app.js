@@ -182,6 +182,54 @@ function checkAuth() {
 }
 
 
+function applyFilters() {
+  const showOnlyNoNuts = document.getElementById("nutsCheck").checked;
+  const selectedSpiciness = document.getElementById("spiceSlider").value;
+
+  section.innerHTML = "<p>Filtering...</p>";
+
+  fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
+    .then((res) => res.json())
+    .then((data) => {
+      let filteredData = data.filter((item) => {
+        const nutMatch = showOnlyNoNuts ? item.nuts === false : true;
+        const spiceMatch = item.spiciness == selectedSpiciness;
+        return nutMatch && spiceMatch;
+      });
+
+      section.innerHTML = "";
+      if (filteredData.length === 0) {
+        section.innerHTML = "<h1>No products found matching these filters.</h1>";
+      } else {
+        filteredData.forEach((item) => (section.innerHTML += card(item)));
+      }
+    })
+    .catch(() => (section.innerHTML = "<h1>Error applying filters</h1>"));
+}
+
+
+const slider = document.getElementById("spiceSlider");
+
+slider.addEventListener("input", function() {
+    const val = this.value;
+    let color = "";
+
+    if (val <= 1) {
+        color = "#2ecc71"; 
+    } else if (val <= 3) {
+        color = "#f39c12"; 
+    } else {
+        color = "#e74c3c"; 
+    }
+
+    this.style.background = color;
+});
+
+
+window.onload = () => {
+    slider.style.background = "#2ecc71"; 
+};
+
 function gotoProfile() {
     window.location.href = "profile.html";
 }
