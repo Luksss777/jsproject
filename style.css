@@ -61,6 +61,7 @@ section {
 
 
 .cart-btn {
+    height: 45px;
     background: var(--primary);
     color: var(--white) !important;
     padding: 10px 20px;
@@ -69,6 +70,7 @@ section {
 }
 
 #profileBtn {
+    height: 45px;
     background: var(--primary);
     color: var(--white) !important;
     padding: 10px 20px;

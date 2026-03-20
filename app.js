@@ -166,7 +166,7 @@ function register(e) {
 
 function checkAuth() {
     const userToken = Cookies.get("user");
-    const authGroup = document.getElementById("authGroup");
+    const authGroup = document.getElementById("authButtons");
     const profileBtn = document.getElementById("profileBtn");
     const navCartBtn = document.querySelector(".cart-btn");
 
