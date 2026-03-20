@@ -82,7 +82,7 @@ function addToCart(id, fasi) {
           }),
         })
           .then((pasuxi) => pasuxi.text())
-          .then(() => alert("produqti ganaxlda"));
+          .then(() => alert("Product Added To Cart"));
       } else {
         fetch("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
           method: "POST",
