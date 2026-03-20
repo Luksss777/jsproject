@@ -37,8 +37,9 @@ function card(item) {
             <img src="${item.image}" alt="">
             <h4>${item.name}</h4>
             <h6>${item.price}₾</h6>
-            <h6 class:"nuts">Nuts: ${item.nuts ? '<i class="fa-solid fa-check" style="color:green;"></i>' : '<i class="fa-solid fa-x" style="color: red;"></i>'}</h6>
+            <h6 class="nuts">Nuts: ${item.nuts ? '<i class="fa-solid fa-check" style="color:green;"></i>' : '<i class="fa-solid fa-x" style="color: red;"></i>'}</h6>
             <h6>spiciness: ${item.spiciness}</h6>
+            <h6>${item.vegeterian ? 'Vegetarian': 'Not Vegetarian'} </h6>
             <button 
                 onclick="addToCart(${item.id}, ${item.price})" 
                 ${!isAuthorized ? 'disabled style="opacity: 0.5; cursor: not-allowed; background: #ccc;"' : ''}>

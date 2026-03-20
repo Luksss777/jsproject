@@ -34,7 +34,7 @@ body {
     z-index: 1000;
 }
 
-i {
+.fa-utensils {
     color: var(--primary);
     font-size: 37px;
 }
