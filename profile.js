@@ -13,7 +13,7 @@ fetch("https://api.everrest.educata.dev/auth", {
     }
 })
 .then(res => {
-    if (!res.ok) throw new Error("ავტორიზაცია ვერ მოხერხდა");
+    if (!res.ok) throw new Error("Authorization Error");
     return res.json();
 })
 .then(data => {
@@ -22,14 +22,14 @@ fetch("https://api.everrest.educata.dev/auth", {
         <div class="profile-info">
             <h2>${data.firstName} ${data.lastName}</h2>
             <h4>${data.email}</h4>
-            <p><strong>ტელეფონი:</strong> ${data.phone}</p>
-            <p><strong>მისამართი:</strong> ${data.address || 'არ არის მითითებული'}</p>
+            <p><strong>Phone:</strong> ${data.phone}</p>
+            <p><strong>Adress:</strong> ${data.address || 'Is Not Specified'}</p>
         </div>
     `;
 })
 .catch(err => {
     console.error(err);
-    userDataDiv.innerHTML = "<p>მონაცემების წამოღება ვერ მოხერხდა.</p>";
+    userDataDiv.innerHTML = "<p>Failed To Retrieve Data</p>";
 });
 
 function logOut() {
